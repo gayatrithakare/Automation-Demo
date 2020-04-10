@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="19454" started-at="2020-04-07T18:19:34Z" finished-at="2020-04-07T18:19:53Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="19454" started-at="2020-04-07T18:19:34Z" finished-at="2020-04-07T18:19:53Z">
+      <class name="com.learnautomation.testcases.LoginTestCRM">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.learnautomation.testcases.LoginTestCRM@5c7fa833]" name="setUp" is-config="true" duration-ms="16526" started-at="2020-04-07T23:49:34Z" finished-at="2020-04-07T23:49:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyBrokenLinksOnHomePAge()[pri:0, instance:com.learnautomation.testcases.LoginTestCRM@5c7fa833]" name="verifyBrokenLinksOnHomePAge" duration-ms="2161" started-at="2020-04-07T23:49:50Z" finished-at="2020-04-07T23:49:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBrokenLinksOnHomePAge -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.learnautomation.testcases.LoginTestCRM@5c7fa833]" name="tearDown" is-config="true" duration-ms="745" started-at="2020-04-07T23:49:53Z" finished-at="2020-04-07T23:49:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.learnautomation.testcases.LoginTestCRM -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
