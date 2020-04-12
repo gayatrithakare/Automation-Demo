@@ -75,15 +75,79 @@ public class SigninPage {
 	
 	@FindBy(id="id_gender1") WebElement genderMr;
 	
-	@FindBy(id="id_gender2")  WebElement genderMrs; 	 	
+	@FindBy(id="id_gender2")  WebElement genderMrs; 
+	
+	@FindBy(xpath="//div[@id='create_account_error']") WebElement inavlidEmailAddrErrorMsg;
+	
+	//Authentication- already registered
+	
+	@FindBy(id="email") WebElement emailAddress;
+
+	@FindBy(id="passwd") WebElement passwordRegister;
+	
+	@FindBy(xpath="//i[@class='icon-lock left']") WebElement signInBtn;
+	
+	//Menu
+	
+	@FindBy(xpath="//a[@title='Women']") WebElement menuWomen;
+	
+	@FindBy(xpath="//a[@class='account']/span") WebElement username;
 	
 	
+	public String userNameCheck(UserRegistration userRegistration) throws InterruptedException
+	{
+		
+		String firstName=userRegistration.getFirstName();
+		String lastName=userRegistration.getLastName();
+		
+		//String userName=firstName.concat(lastName);
+		return firstName+" "+lastName;
+		
+		
+	}
+	
+	public String userNameCheckWeb()
+	{
+		return username.getText();
+	}
+	
+	public void menuWomenClick()
+	{
+		menuWomen.click();
+	}
+	
+	public void clickOnSignIn() throws InterruptedException
+	{
+		signin.click();
+		Thread.sleep(3000);	
+	}
+	
+	public void registration(UserRegistration userRegistration) throws InterruptedException
+	{
+		clickOnSignIn();
+		sendKeysWithDelay(emailAddress,userRegistration.getEmail(),delay);
+		Thread.sleep(3000);
+		sendKeysWithDelay(passwordRegister,userRegistration.getPassword(),delay);
+		Thread.sleep(3000);
+		signInBtn.click();
+		Thread.sleep(4000);
+			
+	}
+	
+	public String invalidEmailAddr() throws InterruptedException
+	{
+		clickOnSignIn();
+		createAccount.click();
+		Thread.sleep(3000);
+		return inavlidEmailAddrErrorMsg.getText();
+
+
+	}
 	
 	public void enterEmailAddress(UserRegistration userRegistration) throws InterruptedException
 	{
-		signin.click();
-		Thread.sleep(3000);
-		sendKeysWithDelay(email,userRegistration.getEmail(),delay);
+		clickOnSignIn();
+    	sendKeysWithDelay(email,userRegistration.getEmail(),delay);
 		Thread.sleep(3000);
 		createAccount.click();
 		Thread.sleep(3000);
@@ -125,6 +189,7 @@ public class SigninPage {
 		sendKeysWithDelay(addinfo,userRegistration.getAddinfo(),delay);
 		sendKeysWithDelay(phone,userRegistration.getHomephone(),delay);
 		sendKeysWithDelay(phoneMobile,userRegistration.getMobilephone(),delay);
+		alias.clear();
 		sendKeysWithDelay(alias,userRegistration.getAlias(),delay);
 		register.click();
 		Thread.sleep(3000);
@@ -142,13 +207,6 @@ public class SigninPage {
 		
 	}
 	
-	public void getAllLinks()
-	{
-		
-		List<WebElement> allLinks=driver.findElements(By.tagName("a"));
-		for(WebElement links: allLinks)
-			System.out.println(links.getAttribute("href"));
-		
-	}
+	
 
 }
