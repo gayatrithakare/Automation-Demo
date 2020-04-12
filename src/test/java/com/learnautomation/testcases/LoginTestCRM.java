@@ -24,7 +24,7 @@ import junit.framework.Assert;
 
 public class LoginTestCRM extends BaseClass {
 	
-	/*@Test
+	@Test
 	public void userRegistration() throws InterruptedException
 	{
 		
@@ -40,8 +40,8 @@ public class LoginTestCRM extends BaseClass {
 	    
 	    signinPage.enterAccountCredentialsDetails(userRegistration);
 	    
-	  }*/
-	/*@Test
+	  }
+	@Test
 	public void verifyTitle()
 	{
 		
@@ -61,8 +61,8 @@ public class LoginTestCRM extends BaseClass {
  
 		 Assert.assertEquals(expectedErrorMsg, actualErrorMsg);
 		
-	}*/
-	/*@Test
+	}
+	@Test
 	public void VerifySignInWithAlreadyRegister() throws InterruptedException, IOException
 	{
 		 SigninPage signinPage=PageFactory.initElements(driver, SigninPage.class);
@@ -72,7 +72,7 @@ public class LoginTestCRM extends BaseClass {
 		 signinPage.registration(userRegistration);
 		 screenCapture.captureScreenshot(driver,"screenshot1");
 		 
-	}*/
+	}
 	@Test
 	public void verifyUserName() throws InterruptedException
 	{
